@@ -1,0 +1,51 @@
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+</head>
+   <body>
+      
+      
+         <p>Enter Name:</p>
+         <p><input id="m" type = "text" name = "input" /></p>
+         <p><input id="my_url_submit" type = "submit" /></p>
+         <div id="abc">/lzfjn/v</div>
+         <script type="text/javascript">
+         var lolol;//save
+
+         $('#my_url_submit').click(function(){
+         	console.log("I'm clicked");
+          		postData('http://google.com');
+        	
+         });
+         	function myfunc(){
+         		postData('http://google.com');
+         	}
+         	function postData(yoyo) {
+		      $.ajax({
+		          type: "POST",
+		          url: "http://localhost:5000/check",
+		          data:{yoyo:yoyo},
+		          dataType: "json", 
+		          error: function(response){
+		          	//console.log(response);
+		          	lolol = response;
+		          console.log(lolol.responseText);
+		          $("#abc").html(lolol.responseText);
+		          	//console.log(response.responseText); //save
+		          }
+		          	//document.getElementByID("abc").innerHTML=response;}, 
+		          //error: function(e){console.log(e);}
+		      });
+		    }
+
+		    function callbackFunc(response) {
+		        // do something with the response
+		        alert(response);
+		        console.log(response);
+		    }
+
+         </script>
+     
+      
+   </body>
+</html>
