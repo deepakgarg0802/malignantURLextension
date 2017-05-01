@@ -17,7 +17,7 @@ def detect(url):
 	flag=utilities.check_cache(url,'mycache.csv')
 
 	if flag==0:
-		return "The URL "+" is Benign"
+		return "The URL "+" is Safe"
 
 	elif flag==1:
 		return "The URL "+" is Malicious"
@@ -34,7 +34,7 @@ def detect(url):
 		if int(a[1])==0:
 			flag=0
 			utilities.append_result([url,flag],'mycache.csv')
-			return "The URL "+" is Benign"
+			return "The URL "+" is Safe"
 
 		elif int(a[1])==1:
 			flag=1
@@ -47,4 +47,4 @@ def detect(url):
 
 	   		   
 if __name__ == '__main__':
-	print detect("http://mait.ac.in")
+	print detect("https://github.com")
