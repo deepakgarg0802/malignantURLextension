@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
     detectUrl(url, function(result) {
 
       renderStatus('Search term: ' + url + '\n' +
-          'Google :' + result);
+          'status :' + result);
       /*var imageResult = document.getElementById('image-result');
       // Explicitly set the width/height to minimize the number of reflows. For
       // a single image, this does not matter, but if you're going to embed

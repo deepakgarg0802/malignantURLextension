@@ -6,7 +6,13 @@ import utilities
 
 
 def detect(url):
-	url=url[4:]
+	if url.startswith("http://"):
+		url= url[len("http://"):]
+
+	if url.startswith("https://"):
+		url= url[len("https://"):]
+
+	url= "http://"+url
 	print url
 	flag=utilities.check_cache(url,'mycache.csv')
 
@@ -41,4 +47,4 @@ def detect(url):
 
 	   		   
 if __name__ == '__main__':
-	print detect("http://fb.com")
+	print detect("http://mait.ac.in")
